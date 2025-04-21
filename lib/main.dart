@@ -1,221 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/frisrApp.dart';
 
 void main() {
   runApp( MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-Map <String, String> contacts = {
-    'John Doe': 'Hey! How are you?',
-    'Jane Smith': 'See you later!',
-    'Alice Johnson': 'Let\'s catch up!',
-    'Bob Brown': 'Good morning!',
-    'Charlie Davis': 'What\'s up?',
-   
-  };
-
- void onMenuSelected(String value) {
-    // التعامل مع اختيار المستخدم
-    
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Whatsapp ',
+      title: 'Whatsapp',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
- 
-          title: const Text('Whatsapp'),
-          backgroundColor: Colors.green[300],
-           actions: [
-          PopupMenuButton<String>(
-            onSelected: onMenuSelected,
-            itemBuilder: (BuildContext context) => [
-              PopupMenuItem(
-                
-                value: 'profile',
-                child: Text('الملف الشخصي'),
-               
-              ),
-             
-              PopupMenuItem(
-                value: 'settings',
-                child: Text('الإعدادات'),
-              ),
-              PopupMenuItem(
-                value: 'logout',
-                child: Text('تسجيل الخروج'),
-              ),
-            ],
-          ),
-        ],
-         /*  actions: [
-           IconButton(
-              icon: const Icon(Icons.camera_alt_outlined),
-              onPressed: () {
-                // Action for camera button
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {
-                // Action for more options button
-              },
-            ),       
-          
-          
-          ], */ 
-       
-           
-       
-        
-        ),
-       body: Container(
-        color: Colors.black,
-         child: ListView(
-          
-            children: [
-         ListTile(
-           leading: Icon(Icons.archive, color: Colors.blueGrey,),
-         title: Text('Archived', style: TextStyle(color: Colors.grey),),
-         
-         
-          ),
-         
-              ListTile(
-                leading: 
-                 CircleAvatar( 
-                  backgroundImage:
-                   NetworkImage('https://play.google.com/store/apps/details?id=com.google.android.apps.photos'),
-                 backgroundColor: Colors.grey,
-                
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('Hey! How are you?'),
-                trailing: Text('12:30 PM'),
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                  backgroundColor: Colors.grey,
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-                onTap: () {
-                  
-                },
-
-                focusColor: Colors.green,
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                   backgroundColor: Colors.grey,
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                   backgroundColor: Colors.grey,
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-                ),
-                 title: Text('John Doe', style: TextStyle(color: Colors.white),),
-                subtitle: Text('See you later!'),
-                trailing: Text('11:45 AM'),
-              ),
-              // Add more ListTiles for other contacts
-            ],
-          ),
-       ),
-
-
-         
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-backgroundColor: Colors.green,
-          child: const Icon(Icons.add),
-        ),
-        ),
-            
-        );
-      
+      theme: ThemeData(
+        primaryColor: Color(0xFF075E54),
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color(0xFF25D366)),
+      ),
+      home: ChatListScreen(),
+    );
   }
 }
+
+class ChatListScreen extends StatelessWidget {
+    //list of chats
+  final List<Map<String, String>> chats = [
+    {'name': 'Mostafa', 'message': ' مساء الخير ', 'time': '10:30'},
+    {'name': 'islam', 'message': '  صباح الخير ,هل انت بخير', 'time': '9:15'},
+    {'name': 'محمد', 'message': 'جاهز للخروجة؟', 'time': '8:00'},
+    {'name': 'ahmed', 'message': 'إزيك يا صاحبي؟', 'time': '10:30'},
+    {'name': 'ابراهيم', 'message': '  ', 'time': '9:15'},
+    {'name': 'محسن', 'message': 'جاهز للخروجة؟', 'time': '8:00'},
+    {'name': 'عبد الله', 'message': '  ', 'time': '10:30'},
+    {'name': 'عمر', 'message': '  ', 'time': '9:15'},
+    {'name': 'محمد', 'message': ' ', 'time': '8:00'},
+    {'name': 'Mostafa', 'message': 'إزيك يا صاحبي؟', 'time': '10:30'},
+    {'name': 'اسامه', 'message': 'فينك من زمان؟', 'time': '9:15'},
+    {'name': 'عيد', 'message': 'جاهز للخروجة؟', 'time': '8:00'},
+
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('whatsapp'),
+        backgroundColor: Color(0xFF075E54),
+        actions: [
+          Icon( Icons.search ),
+          SizedBox(width: 16),
+          Icon(Icons.more_vert),
+         
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: chats.length,
+        itemBuilder: (context, i) {
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.grey[500],
+              child: Text(chats[i]['name']![0]),
+            ),
+            title: Text(chats[i]['name']!),
+            subtitle: Text(chats[i]['message']!),
+            trailing: Text(chats[i]['time']!),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ChatScreen(name: chats[i]['name']!),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
